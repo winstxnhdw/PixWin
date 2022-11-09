@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "pixwin"
 version = "0.0.1"
 authors = [
-    "winstxnhdw",
+    "{ name="winstxnhdw", email="author@example.com" }",
 ]
 description = "Fastest API for retrieving RGB values of a pixel on Windows."
 readme = "README.md"

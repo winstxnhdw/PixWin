@@ -1,12 +1,11 @@
-# PixWin
 
-<p align="center"><b>Do one thing, and do it well.</b></p>
+# PixWin
 
 Fastest API for retrieving RGB values of a pixel on Windows.
 
 ## Benchmarks
 
-Here we compare how PixWin fare against PyScreeze, which was the fastest API for retrieving RGB values of a pixel on Windows.
+Before PixWin, the fastest API for retrieving RGB values of a pixel on Windows was [PyScreeze](https://github.com/asweigart/pyscreeze). Here's how PixWin fares against it.
 
 ### Single-pixel retrieval
 
