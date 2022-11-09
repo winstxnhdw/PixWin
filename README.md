@@ -1,11 +1,17 @@
 
 # PixWin
 
-Fastest API for retrieving RGB values of a pixel on Windows.
+`PixWin` is a fast Python API for retrieving RGB values of a pixel on Windows, and it is optimised for speed, safety and weight. It uses Python ctypes to access [GetPixel()](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getpixel) within the Win32 API.
+
+## Installation
+
+```bash
+pip install git+https://github.com/winstxnhdw/PixWin
+```
 
 ## Benchmarks
 
-Before PixWin, the fastest API for retrieving RGB values of a pixel on Windows was [PyScreeze](https://github.com/asweigart/pyscreeze). Here's how PixWin fares against it.
+Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves pixel values via the Win32 API. Here's how PixWin fare against it.
 
 ### Single-pixel retrieval
 
@@ -17,7 +23,7 @@ from pixwin import PixWin
 def pixwin():
 
     with PixWin() as pw:
-        pw.get_pixel(0,0)
+        pw.get_pixel(0, 0)
 
 profile.run('pixwin()')
 ```
@@ -140,7 +146,7 @@ import pyscreeze as ps
 def pyscreeze():
 
     for _ in range(100):
-        ps.pixel(0,0)
+        ps.pixel(0, 0)
 
 profile.run('pyscreeze()')
 ```
