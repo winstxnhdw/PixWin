@@ -1,7 +1,7 @@
 
 # PixWin
 
-`PixWin` is a fast Python API for retrieving RGB values of a pixel on Windows, and it is optimised for speed, safety and weight. It uses Python ctypes to access [GetPixel()](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getpixel) within the Win32 API.
+`PixWin` is a fast Python API for retrieving RGB values of a pixel on Windows. It uses Python ctypes to access [GetPixel()](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getpixel) within the Win32 API.
 
 ## Installation
 
