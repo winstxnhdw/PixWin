@@ -8,7 +8,7 @@ version = "0.0.1"
 authors = [
     { name="winstxnhdw", email="author@example.com" },
 ]
-description = "Fastest API for retrieving RGB values of a pixel on Windows."
+description = "A fast Python API for retrieving RGB values of a pixel on Windows using ctypes."
 readme = "README.md"
 requires-python = ">=3.7"
 classifiers = [
