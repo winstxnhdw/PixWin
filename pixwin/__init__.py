@@ -31,4 +31,4 @@ class PixWin:
     def get_pixel(self, x: int, y: int) -> tuple[int, int, int]:
 
         colour = self.gdi32.GetPixel(self.window_device_context_handle, x, y)
-        return (colour & 0xff, (colour >> 8) & 0xff, (colour >> 16) & 0xff)
+        return colour & 0xff, (colour >> 8) & 0xff, (colour >> 16) & 0xff
