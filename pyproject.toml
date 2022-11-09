@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pixwin"
+version = "0.0.1"
+authors = [
+    "winstxnhdw",
+]
+description = "Fastest API for retrieving RGB values of a pixel on Windows."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Operating System :: Microsoft :: Windows",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/winstxnhdw/PixWin"
+"Bug Tracker" = "https://github.com/winstxnhdw/PixWin/issues"
