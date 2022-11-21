@@ -11,7 +11,7 @@ pip install git+https://github.com/winstxnhdw/PixWin
 
 ## Benchmarks
 
-Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves pixel values via the Win32 API. Here's how PixWin fare against it.
+Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves pixel values via the Win32 API. PixWin is ~5964x faster than [PyScreeze](https://github.com/asweigart/pyscreeze).
 
 ### Single-pixel retrieval
 
