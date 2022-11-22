@@ -2,7 +2,9 @@ from ctypes import windll, wintypes
 
 from typing_extensions import Self
 
-from pixwin.utils import Win32OpenDC
+from pixwin.libs import Win32OpenDC
+from pixwin.libs.get_pixel import (get_blue_value, get_green_value,
+                                   get_red_value, get_rgb)
 
 
 class PixWin:
@@ -30,5 +32,19 @@ class PixWin:
 
     def get_pixel(self, x: int, y: int) -> tuple[int, int, int]:
 
-        colour = self.gdi32.GetPixel(self.window_device_context_handle, x, y)
-        return colour & 0xff, (colour >> 8) & 0xff, (colour >> 16) & 0xff
+        return get_rgb(self.window_device_context_handle, x, y)
+
+
+    def get_red_value(self, x: int, y: int) -> int:
+
+        return get_red_value(self.window_device_context_handle, x, y)
+
+
+    def get_green_value(self, x: int, y: int) -> int:
+
+        return get_green_value(self.window_device_context_handle, x, y)
+
+
+    def get_blue_value(self, x: int, y: int) -> int:
+
+        return get_blue_value(self.window_device_context_handle, x, y)
