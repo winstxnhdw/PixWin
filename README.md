@@ -1,7 +1,42 @@
 
 # PixWin
 
-`PixWin` is a fast Python API for retrieving RGB values of a pixel on Windows. It uses Python ctypes to access [GetPixel()](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getpixel) within the Win32 API.
+`PixWin` is a fast Python API for retrieving RGB values of a pixel on Windows. It uses Python C extensions and ctypes to access [GetPixel()](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getpixel) within the Win32 API.
+
+```yaml
+get_pixel(x, y)
+
+:param x:   (int) x-coordinate of window
+:param y:   (int) y-coordinate of window
+
+:return r:  (int) red value of pixel
+:return g:  (int) green value of pixel
+:return b:  (int) blue value of pixel
+
+
+get_red_value(x, y)
+
+:param x:   (int) x-coordinate of window
+:param y:   (int) y-coordinate of window
+
+:return r:  (int) red value of pixel
+
+
+get_green_value(x, y)
+
+:param x:   (int) x-coordinate of window
+:param y:   (int) y-coordinate of window
+
+:return g:  (int) green value of pixel
+
+
+get_blue_value(x, y)
+
+:param x:   (int) x-coordinate of window
+:param y:   (int) y-coordinate of window
+
+:return b:  (int) blue value of pixel
+```
 
 ## Installation
 
@@ -31,13 +66,14 @@ if __name__ == '__main__':
 ```
 
 ```txt
-5 function calls in 0.000 seconds
+6 function calls in 0.000 seconds
 
 ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.000    0.000 <string>:1(<module>)
-    1    0.000    0.000    0.000    0.000 __init__.py:31(get_pixel)
-    1    0.000    0.000    0.000    0.000 test.py:6(pixwin)
+    1    0.000    0.000    0.000    0.000 __init__.py:33(get_pixel)
+    1    0.000    0.000    0.000    0.000 test.py:5(pixwin)
     1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+    1    0.000    0.000    0.000    0.000 {built-in method pixwin.libs.get_pixel.get_rgb}
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
 
@@ -100,15 +136,16 @@ if __name__ == '__main__':
 ```
 
 ```txt
-10005 function calls in 0.015 seconds
+20005 function calls in 0.006 seconds
 
 ncalls  tottime  percall  cumtime  percall filename:lineno(function)
-    1    0.000    0.000    0.015    0.015 <string>:1(<module>)
-10000    0.012    0.000    0.012    0.000 __init__.py:31(get_pixel)
-    1    0.000    0.000    0.015    0.015 test.py:6(pixwin)
-    1    0.003    0.003    0.015    0.015 test.py:8(<listcomp>)
-    1    0.000    0.000    0.015    0.015 {built-in method builtins.exec}
-    1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects
+    1    0.000    0.000    0.006    0.006 <string>:1(<module>)
+10000    0.002    0.000    0.004    0.000 __init__.py:33(get_pixel)
+    1    0.000    0.000    0.006    0.006 test.py:5(pixwin)
+    1    0.002    0.002    0.006    0.006 test.py:6(<listcomp>)
+    1    0.000    0.000    0.006    0.006 {built-in method builtins.exec}
+10000    0.003    0.000    0.003    0.000 {built-in method pixwin.libs.get_pixel.get_rgb}
+    1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
 
 ```python
