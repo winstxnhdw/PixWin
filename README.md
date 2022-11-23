@@ -46,9 +46,11 @@ pip install git+https://github.com/winstxnhdw/PixWin
 
 ## Benchmarks
 
-Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves pixel values via the Win32 API. PixWin is ~5964x faster than [PyScreeze](https://github.com/asweigart/pyscreeze).
+Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves pixel values via the Win32 API. PixWin is ~15000x faster than [PyScreeze](https://github.com/asweigart/pyscreeze).
 
 ### Single-pixel retrieval
+
+PixWin
 
 ```python
 import cProfile as profile
@@ -76,6 +78,8 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.000    0.000 {built-in method pixwin.libs.get_pixel.get_rgb}
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
+
+PyScreeze
 
 ```python
 import cProfile as profile
@@ -120,6 +124,8 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 
 ### Multi-pixel retrieval
 
+PixWin
+
 ```python
 import cProfile as profile
 from pixwin import PixWin
@@ -147,6 +153,8 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 10000    0.003    0.000    0.003    0.000 {built-in method pixwin.libs.get_pixel.get_rgb}
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
+
+PyScreeze
 
 ```python
 import cProfile as profile
