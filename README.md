@@ -44,6 +44,32 @@ get_blue_value(x, y)
 pip install git+https://github.com/winstxnhdw/PixWin
 ```
 
+## Usage
+
+```python
+from pixwin import PixWin
+
+
+def loop(pixwin: PixWin):
+    
+    while True:
+        print(pixwin.get_pixel(420, 69))
+ 
+
+def main():
+    
+    with PixWin() as pixwin:
+        try:
+            loop(pixwin)
+            
+        except KeyboardInterrupt:
+            print('Manual exit detected.')
+
+
+if __name__ == '__main__':
+    main()
+```
+
 ## Benchmarks
 
 Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves pixel values via the Win32 API. PixWin is ~15000x faster than [PyScreeze](https://github.com/asweigart/pyscreeze).
