@@ -53,7 +53,10 @@ from pixwin import PixWin
 def loop(pixwin: PixWin):
     
     while True:
-        print(pixwin.get_pixel(420, 69))
+        print(pixwin.get_pixel(420, 69))        # e.g. (42, 21, 13)
+        print(pixwin.get_red_value(420, 69))    # e.g. 42
+        print(pixwin.get_blue_value(420, 69))   # e.g. 21
+        print(pixwin.get_green_value(420, 69))  # e.g. 13
  
 
 def main():
