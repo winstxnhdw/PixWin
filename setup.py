@@ -1,4 +1,5 @@
-from distutils.core import Extension, setup
+from setuptools import Extension, setup
+
 
 setup (
     ext_modules=[

@@ -19,3 +19,6 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/winstxnhdw/PixWin"
 "Bug Tracker" = "https://github.com/winstxnhdw/PixWin/issues"
+
+[tool.setuptools]
+packages = ["pixwin.libs.get_pixel"]
