@@ -34,7 +34,7 @@ class Win32OpenDC:
 
 
     def __enter__(self) -> int:
-
+        
         self.device_context_handle = self.user32.GetDC(self.window_handle)
 
         if self.device_context_handle == 0:
