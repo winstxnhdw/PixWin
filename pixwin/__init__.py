@@ -10,7 +10,7 @@ class PixWin:
     """
     Summary
     -------
-    Context manager for retrieving pixel values from a window.
+    Context manager for retrieving pixel values from a window
 
     Attributes
     ----------
@@ -63,7 +63,7 @@ class PixWin:
         """
         Summary
         -------
-        Get the RGB value of a pixel at a given x, y coordinate.
+        Get the RGB value of a pixel at a given x, y coordinate 
 
         Parameters
         ----------
@@ -83,7 +83,7 @@ class PixWin:
         """
         Summary
         -------
-        Get the red value of a pixel at a given x, y coordinate.
+        Get the red value of a pixel at a given x, y coordinate
 
         Parameters
         ----------
@@ -101,7 +101,7 @@ class PixWin:
         """
         Summary
         -------
-        Get the green value of a pixel at a given x, y coordinate.
+        Get the green value of a pixel at a given x, y coordinate
 
         Parameters
         ----------
@@ -119,7 +119,7 @@ class PixWin:
         """
         Summary
         -------
-        Get the blue value of a pixel at a given x, y coordinate.
+        Get the blue value of a pixel at a given x, y coordinate
 
         Parameters
         ----------

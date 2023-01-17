@@ -5,7 +5,7 @@ class Win32OpenDC:
     """
     Summary
     -------
-    Context manager for opening a device context.
+    Context manager for opening a device context
 
     Attributes
     ----------
