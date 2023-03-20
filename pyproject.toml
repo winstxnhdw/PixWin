@@ -22,3 +22,14 @@ classifiers = [
 
 [tool.setuptools]
 packages = ["pixwin.libs.get_pixel"]
+
+[tool.pylint.format]
+good-names = [
+    "x", "y", "z"
+]
+
+[tool.pylint.message_control]
+disable = [
+    "missing-module-docstring",
+    "no-name-in-module"
+]
