@@ -10,7 +10,7 @@ authors = [
 ]
 description = "A fast Python API for retrieving RGB values of a pixel on Windows using ctypes."
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Operating System :: Microsoft :: Windows",
@@ -19,9 +19,6 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/winstxnhdw/PixWin"
 "Bug Tracker" = "https://github.com/winstxnhdw/PixWin/issues"
-
-[tool.setuptools]
-packages = ["pixwin.libs.get_pixel"]
 
 [tool.pylint.format]
 good-names = [

@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    paths:
+      - 'pixwin/**'
+      - '.github/workflows/main.yml'
+      - 'setup.py'
+      - 'pyproject.toml'
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Create requirements.txt
+        run: echo "pixwin @ git+https://github.com/winstxnhdw/PixWin@${{ github.sha }}" > requirements.txt
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install PixWin
+        run: pip install -r requirements.txt
+
+      - name: Mini smoke test
+        run: python -c "from pixwin import PixWin; PixWin().__enter__().get_pixel(0, 0)"

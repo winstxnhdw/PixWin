@@ -2,43 +2,9 @@
 # PixWin
 
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
+[![main.yml](https://github.com/winstxnhdw/PixWin/actions/workflows/main.yml/badge.svg)](https://github.com/winstxnhdw/PixWin/actions/workflows/main.yml)
 
 `PixWin` is a fast Python API for retrieving RGB values of a pixel on Windows. It uses Python C extensions and ctypes to access [GetPixel()](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getpixel) within the Win32 API.
-
-```yaml
-get_pixel(x, y)
-
-:param x:   (int) x-coordinate of window
-:param y:   (int) y-coordinate of window
-
-:return r:  (int) red value of pixel
-:return g:  (int) green value of pixel
-:return b:  (int) blue value of pixel
-
-
-get_red_value(x, y)
-
-:param x:   (int) x-coordinate of window
-:param y:   (int) y-coordinate of window
-
-:return r:  (int) red value of pixel
-
-
-get_green_value(x, y)
-
-:param x:   (int) x-coordinate of window
-:param y:   (int) y-coordinate of window
-
-:return g:  (int) green value of pixel
-
-
-get_blue_value(x, y)
-
-:param x:   (int) x-coordinate of window
-:param y:   (int) y-coordinate of window
-
-:return b:  (int) blue value of pixel
-```
 
 ## Installation
 
@@ -53,20 +19,20 @@ from pixwin import PixWin
 
 
 def loop(pixwin: PixWin):
-    
+
     while True:
         print(pixwin.get_pixel(420, 69))        # e.g. (42, 21, 13)
         print(pixwin.get_red_value(420, 69))    # e.g. 42
         print(pixwin.get_blue_value(420, 69))   # e.g. 21
         print(pixwin.get_green_value(420, 69))  # e.g. 13
- 
+
 
 def main():
-    
+
     with PixWin() as pixwin:
         try:
             loop(pixwin)
-            
+
         except KeyboardInterrupt:
             print('Manual exit detected.')
 
@@ -90,7 +56,7 @@ from pixwin import PixWin
 
 with PixWin() as pw:
     def pixwin():
-        
+
         pw.get_pixel(0, 0)
 
 

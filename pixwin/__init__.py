@@ -1,6 +1,5 @@
 from ctypes import windll, wintypes
-
-from typing_extensions import Self
+from typing import Self
 
 from pixwin.libs import (Win32OpenDC, get_blue_value, get_green_value,
                          get_red_value, get_rgb)
@@ -63,7 +62,7 @@ class PixWin:
         """
         Summary
         -------
-        Get the RGB value of a pixel at a given x, y coordinate 
+        Get the RGB value of a pixel at a given x, y coordinate
 
         Parameters
         ----------
@@ -131,4 +130,3 @@ class PixWin:
         green (int) : green value of the pixel
         """
         return get_blue_value(self.window_device_context_handle, x, y)
-    
