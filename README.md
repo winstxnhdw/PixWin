@@ -196,3 +196,11 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 10000    0.048    0.000    0.048    0.000 {method 'format' of 'str' objects}
     4    0.000    0.000    0.000    0.000 {method 'startswith' of 'str' objects}
 ```
+
+## Development
+
+You can build locally by running `setuptools`.
+
+```bash
+python setup.py build_ext --inplace
+```
