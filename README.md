@@ -131,7 +131,8 @@ from pixwin import PixWin
 with PixWin() as pw:
     def pixwin():
 
-        [pw.get_pixel(0, 0) for _ in range(10000)]
+        for _ in range(10000):
+            pw.get_pixel(0, 0)
 
 
 if __name__ == '__main__':
@@ -139,7 +140,7 @@ if __name__ == '__main__':
 ```
 
 ```txt
-20005 function calls in 0.006 seconds
+20004 function calls in 0.006 seconds
 
 ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.006    0.006 <string>:1(<module>)

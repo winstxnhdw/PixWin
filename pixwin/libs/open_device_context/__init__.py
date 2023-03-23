@@ -43,7 +43,7 @@ class Win32OpenDC:
         return self.device_context_handle
 
 
-    def __exit__(self, *_):
+    def __exit__(self, *_: None):
 
         if self.user32.ReleaseDC(self.window_handle, self.device_context_handle) == 0:
             raise WindowsError('[User32.dll] ReleaseDC failed.')
