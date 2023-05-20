@@ -12,14 +12,6 @@ class Win32OpenDC:
     window_handle (int) : handle to the window
     device_context_handle (int) : handle to the device context
     user32 (WinDLL): user32 library
-
-    Methods
-    -------
-    __init__(window_handle: int) -> self
-        initialise the Win32OpenDC object with a window handle
-
-    __enter__() -> int
-        open the device context and return the handle
     """
     def __init__(self, window_handle: int):
 

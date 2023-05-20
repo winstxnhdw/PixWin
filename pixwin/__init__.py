@@ -32,12 +32,6 @@ class PixWin:
 
     Methods
     -------
-    __init__(window_handle: int=0) -> self
-        initialise the PixWin object with a window handle
-
-    __enter__() -> self
-        open the device context and return the object
-
     get_pixel(x: int, y: int) -> tuple[int, int, int]
         get the RGB value of a pixel at a given x, y coordinate
 
