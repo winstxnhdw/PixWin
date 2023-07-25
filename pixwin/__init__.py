@@ -44,6 +44,8 @@ class PixWin:
     get_blue_value(x: int, y: int) -> int
         get the blue value of a pixel at a given x, y coordinate
     """
+    __slots__ = 'open_device_context', 'window_device_context_handle'
+
     def __init__(self, window_handle: int=0):
 
         self.open_device_context = Win32OpenDC(window_handle)

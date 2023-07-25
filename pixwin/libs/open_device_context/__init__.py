@@ -13,6 +13,8 @@ class Win32OpenDC:
     device_context_handle (int) : handle to the device context
     user32 (WinDLL): user32 library
     """
+    __slots__ = 'window_handle', 'device_context_handle', 'user32'
+
     def __init__(self, window_handle: int):
 
         self.window_handle = window_handle
