@@ -13,6 +13,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
       - name: Install PixWin
         run: pip install git+https://github.com/winstxnhdw/PixWin
 

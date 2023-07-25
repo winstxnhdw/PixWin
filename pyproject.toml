@@ -10,7 +10,7 @@ authors = [
 ]
 description = "A fast Python API for retrieving RGB values of a pixel on Windows using ctypes."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.11"
 classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Operating System :: Microsoft :: Windows",
