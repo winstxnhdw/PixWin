@@ -9,23 +9,8 @@ on:
       - pyproject.toml
 
 jobs:
-  build:
-    runs-on: windows-latest
-
-    steps:
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.11
-
-      - name: Install PixWin
-        run: pip install git+https://github.com/winstxnhdw/PixWin
-
-      - name: Mini smoke test
-        run: python -c "from pixwin import PixWin; PixWin().__enter__().get_pixel(0, 0)"
-
-  test:
-    runs-on: windows-latest
+  lint:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -40,11 +25,54 @@ jobs:
       - name: Install the development dependencies
         run: pip install -r requirements.txt
 
+      - name: Run linter
+        run: pylint $(git ls-files '*.py')
+        
+  type-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+          cache: pip
+
+      - name: Install the development dependencies
+        run: pip install -r requirements.txt
+
+      - name: Type Check
+        run: pyright
+        
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
       - name: Build the extension
         run: python setup.py build_ext --inplace
 
-      - name: Run linter
-        run: pylint $(git ls-files '*.py')
+  test:
+    runs-on: windows-latest
 
-      - name: Run typechecker
-        run: pyright
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install PixWin
+        run: pip install git+https://github.com/winstxnhdw/PixWin
+
+      - name: Mini smoke test
+        run: python -c "from pixwin import PixWin; PixWin().__enter__().get_pixel(0, 0)"
