@@ -3,6 +3,7 @@
 
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
 [![main.yml](https://github.com/winstxnhdw/PixWin/actions/workflows/main.yml/badge.svg)](https://github.com/winstxnhdw/PixWin/actions/workflows/main.yml)
+[![formatter.yml](https://github.com/winstxnhdw/PixWin/actions/workflows/formatter.yml/badge.svg)](https://github.com/winstxnhdw/PixWin/actions/workflows/formatter.yml)
 [![dependabot.yml](https://github.com/winstxnhdw/PixWin/actions/workflows/dependabot.yml/badge.svg)](https://github.com/winstxnhdw/PixWin/actions/workflows/dependabot.yml)
 
 `PixWin` is a fast Python API for retrieving RGB values of a pixel on Windows. It uses Python C extensions and ctypes to access [GetPixel()](https://learn.microsoft.com/en-us/windows/win32/api/wingdi/nf-wingdi-getpixel) within the Win32 API.
