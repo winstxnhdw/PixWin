@@ -48,7 +48,9 @@ Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves
 
 ### Single-pixel retrieval
 
-PixWin
+<details>
+
+<summary>PixWin</summary>
 
 ```python
 import cProfile as profile
@@ -65,6 +67,8 @@ if __name__ == '__main__':
     profile.run('pixwin()')
 ```
 
+</details>
+
 ```txt
 6 function calls in 0.000 seconds
 
@@ -77,7 +81,9 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
 
-PyScreeze
+<details>
+
+<summary><a href="https://github.com/asweigart/pyscreeze">asweigart/pyscreeze</a></summary>
 
 ```python
 import cProfile as profile
@@ -90,6 +96,8 @@ def pyscreeze():
 
 profile.run('pyscreeze()')
 ```
+
+</details>
 
 ```txt
 41 function calls in 0.007 seconds
@@ -122,7 +130,9 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 
 ### Multi-pixel retrieval
 
-PixWin
+<details>
+
+<summary>PixWin</summary>
 
 ```python
 import cProfile as profile
@@ -140,6 +150,8 @@ if __name__ == '__main__':
     profile.run('pixwin()')
 ```
 
+</details>
+
 ```txt
 20004 function calls in 0.006 seconds
 
@@ -153,7 +165,10 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
 
-PyScreeze
+
+<details>
+
+<summary><a href="https://github.com/asweigart/pyscreeze">asweigart/pyscreeze</a></summary>
 
 ```python
 import cProfile as profile
@@ -167,6 +182,8 @@ def pyscreeze():
 if __name__ == '__main__':
     profile.run('pyscreeze()')
 ```
+
+</details>
 
 ```txt
 150027 function calls in 89.460 seconds
