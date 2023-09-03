@@ -45,11 +45,11 @@ class PixWin:
         get the blue value of a pixel at a given x, y coordinate
     """
     __slots__ = 'open_device_context', 'window_device_context_handle'
+    window_device_context_handle: int
 
-    def __init__(self, window_handle: int=0):
+    def __init__(self, window_handle: int = 0):
 
         self.open_device_context = Win32OpenDC(window_handle)
-        self.window_device_context_handle = None
 
 
     def __enter__(self) -> Self:
@@ -81,7 +81,7 @@ class PixWin:
         blue (int) : blue value of the pixel
         """
         try:
-            return get_rgb(self.window_device_context_handle, x, y) # type: ignore
+            return get_rgb(self.window_device_context_handle, x, y)
 
         except SystemError as error:
             raise NoDeviceContextError from error
@@ -103,7 +103,7 @@ class PixWin:
         red (int) : red value of the pixel
         """
         try:
-            return get_red_value(self.window_device_context_handle, x, y) # type: ignore
+            return get_red_value(self.window_device_context_handle, x, y)
 
         except SystemError as error:
             raise NoDeviceContextError from error
@@ -125,7 +125,7 @@ class PixWin:
         blue (int) : blue value of the pixel
         """
         try:
-            return get_green_value(self.window_device_context_handle, x, y) # type: ignore
+            return get_green_value(self.window_device_context_handle, x, y)
 
         except SystemError as error:
             raise NoDeviceContextError from error
@@ -147,7 +147,7 @@ class PixWin:
         green (int) : green value of the pixel
         """
         try:
-            return get_blue_value(self.window_device_context_handle, x, y) # type: ignore
+            return get_blue_value(self.window_device_context_handle, x, y)
 
         except SystemError as error:
             raise NoDeviceContextError from error

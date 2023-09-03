@@ -2,7 +2,6 @@
 
 from pixwin.types import Blue, Green, Pixel, Red
 
-
 def get_rgb(device_context_handle: int, x: int, y: int) -> Pixel: ...
 
 def get_red_value(device_context_handle: int, x: int, y: int) -> Red: ...
