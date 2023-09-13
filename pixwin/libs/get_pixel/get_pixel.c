@@ -6,10 +6,11 @@ COLORREF get_pixel(PyObject *args) {
     int x;
     int y;
     
-    if (!PyArg_ParseTuple(args, "Oii", &hdc_object, &x, &y)) return NULL;
-
-    const HDC hdc = PyLong_AsVoidPtr(hdc_object);
-    return GetPixel(hdc, x, y);
+    if (!PyArg_ParseTuple(args, "Oii", &hdc_object, &x, &y)) {
+        return NULL;
+    }
+    
+    return GetPixel(PyLong_AsVoidPtr(hdc_object), x, y);
 }
 
 static PyObject* get_rgb(PyObject *self, PyObject *args) {
