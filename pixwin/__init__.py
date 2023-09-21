@@ -28,20 +28,19 @@ class PixWin:
     ----------
     open_device_context (Win32OpenDC) : Win32OpenDC object used to open the device context
     window_device_context_handle (int) : handle to the device context
-    gdi32 (WinDLL): gdi32 library.
 
     Methods
     -------
-    get_pixel(x: int, y: int) -> tuple[int, int, int]
+    get_pixel(x: int, y: int) -> tuple[Red, Green, Blue]
         get the RGB value of a pixel at a given x, y coordinate
 
-    get_red_value(x: int, y: int) -> int
+    get_red_value(x: int, y: int) -> Red | None
         get the red value of a pixel at a given x, y coordinate
 
-    get_green_value(x: int, y: int) -> int
+    get_green_value(x: int, y: int) -> Green | None
         get the green value of a pixel at a given x, y coordinate
 
-    get_blue_value(x: int, y: int) -> int
+    get_blue_value(x: int, y: int) -> Blue | None
         get the blue value of a pixel at a given x, y coordinate
     """
     __slots__ = 'open_device_context', 'window_device_context_handle'
@@ -63,7 +62,7 @@ class PixWin:
         self.open_device_context.__exit__()
 
 
-    def get_pixel(self, x: int, y: int) -> Pixel:
+    def get_pixel(self, x: int, y: int) -> Pixel | None:
         """
         Summary
         -------
@@ -80,14 +79,10 @@ class PixWin:
         green (int) : green value of the pixel
         blue (int) : blue value of the pixel
         """
-        try:
-            return get_rgb(self.window_device_context_handle, x, y)
-
-        except SystemError as error:
-            raise NoDeviceContextError from error
+        return get_rgb(self.window_device_context_handle, x, y)
 
 
-    def get_red_value(self, x: int, y: int) -> Red:
+    def get_red_value(self, x: int, y: int) -> Red | None:
         """
         Summary
         -------
@@ -102,14 +97,10 @@ class PixWin:
         -------
         red (int) : red value of the pixel
         """
-        try:
-            return get_red_value(self.window_device_context_handle, x, y)
-
-        except SystemError as error:
-            raise NoDeviceContextError from error
+        return get_red_value(self.window_device_context_handle, x, y)
 
 
-    def get_green_value(self, x: int, y: int) -> Green:
+    def get_green_value(self, x: int, y: int) -> Green | None:
         """
         Summary
         -------
@@ -124,14 +115,10 @@ class PixWin:
         -------
         blue (int) : blue value of the pixel
         """
-        try:
-            return get_green_value(self.window_device_context_handle, x, y)
-
-        except SystemError as error:
-            raise NoDeviceContextError from error
+        return get_green_value(self.window_device_context_handle, x, y)
 
 
-    def get_blue_value(self, x: int, y: int) -> Blue:
+    def get_blue_value(self, x: int, y: int) -> Blue | None:
         """
         Summary
         -------
@@ -146,8 +133,4 @@ class PixWin:
         -------
         green (int) : green value of the pixel
         """
-        try:
-            return get_blue_value(self.window_device_context_handle, x, y)
-
-        except SystemError as error:
-            raise NoDeviceContextError from error
+        return get_blue_value(self.window_device_context_handle, x, y)
