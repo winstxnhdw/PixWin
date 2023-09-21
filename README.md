@@ -58,10 +58,14 @@ import cProfile as profile
 from pixwin import PixWin
 
 
-with PixWin() as pw:
+with PixWin() as pixwin:
     def pixwin():
-
-        pw.get_pixel(0, 0)
+        """
+        Summary
+        -------
+        retrieve a single pixel value
+        """
+        pixwin.get_pixel(0, 0)
 
 
 if __name__ == '__main__':
@@ -88,12 +92,16 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 
 ```python
 import cProfile as profile
-import pyscreeze as ps
+import pyscreeze
 
 
 def pyscreeze():
-
-    ps.pixel(0, 0)
+    """
+    Summary
+    -------
+    retrieve a single pixel value
+    """
+    pyscreeze.pixel(0, 0)
 
 profile.run('pyscreeze()')
 ```
@@ -140,11 +148,14 @@ import cProfile as profile
 from pixwin import PixWin
 
 
-with PixWin() as pw:
+with PixWin() as pixwin:
     def pixwin():
-
-        for _ in range(10000):
-            pw.get_pixel(0, 0)
+        """
+        Summary
+        -------
+        retrieve multiple pixel values
+        """
+        [pixwin.get_pixel(0, 0) for _ in range(10000)]
 
 
 if __name__ == '__main__':
@@ -166,19 +177,22 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
 
-
 <details>
 
 <summary><a href="https://github.com/asweigart/pyscreeze">asweigart/pyscreeze</a></summary>
 
 ```python
 import cProfile as profile
-import pyscreeze as ps
+import pyscreeze
 
 
 def pyscreeze():
-
-    [ps.pixel(0, 0) for _ in range(10000)]
+    """
+    Summary
+    -------
+    retrieve multiple pixel values
+    """
+    [pyscreeze.pixel(0, 0) for _ in range(10000)]
 
 if __name__ == '__main__':
     profile.run('pyscreeze()')
