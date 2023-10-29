@@ -2,7 +2,6 @@
 #include <Windows.h>
 
 static COLORREF get_pixel(PyObject *args) {
-    COLORREF colour;
     PyObject *hdc_object;
     int x;
     int y;
@@ -11,15 +10,13 @@ static COLORREF get_pixel(PyObject *args) {
         return CLR_INVALID;
     }
 
-    const HDC hdc = PyLong_AsVoidPtr(hdc_object);
+    const HDC device_context_handle = PyLong_AsVoidPtr(hdc_object);
 
-    if (PyErr_Occurred()) {
+    if (!device_context_handle && PyErr_Occurred()) {
         return CLR_INVALID;
     }
 
-    colour = GetPixel(hdc, x, y);
-
-    return colour;
+    return GetPixel(device_context_handle, x, y);
 }
 
 static PyObject* get_rgb(PyObject *self, PyObject *args) {
