@@ -1,7 +1,7 @@
 #include <Python.h>
 #include <Windows.h>
 
-COLORREF get_pixel(PyObject *args) {
+static COLORREF get_pixel(PyObject *args) {
     COLORREF colour;
     PyObject *hdc_object;
     int x;
