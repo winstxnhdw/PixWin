@@ -5,7 +5,6 @@ on:
     paths:
       - .github/workflows/main.yml
       - pyproject.toml
-      - setup.py
       - '**.py'
 
 jobs:
