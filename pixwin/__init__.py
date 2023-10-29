@@ -1,7 +1,12 @@
 from typing import Self
 
-from pixwin.libs import (Win32OpenDC, get_blue_value, get_green_value,
-                         get_red_value, get_rgb)
+from pixwin.libs import (
+    Win32OpenDC,
+    get_blue_value,
+    get_green_value,
+    get_red_value,
+    get_rgb,
+)
 from pixwin.types import Blue, Green, Pixel, Red
 
 
