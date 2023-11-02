@@ -80,9 +80,9 @@ class PixWin:
 
         Returns
         -------
-        red (int) : red value of the pixel
-        green (int) : green value of the pixel
-        blue (int) : blue value of the pixel
+        red (int?) : red value of the pixel
+        green (int?) : green value of the pixel
+        blue (int?) : blue value of the pixel
         """
         return get_rgb(self.window_device_context_handle, x, y)
 
@@ -100,7 +100,7 @@ class PixWin:
 
         Returns
         -------
-        red (int) : red value of the pixel
+        red (int?) : red value of the pixel
         """
         return get_red_value(self.window_device_context_handle, x, y)
 
@@ -118,7 +118,7 @@ class PixWin:
 
         Returns
         -------
-        blue (int) : blue value of the pixel
+        blue (int?) : blue value of the pixel
         """
         return get_green_value(self.window_device_context_handle, x, y)
 
@@ -136,6 +136,6 @@ class PixWin:
 
         Returns
         -------
-        green (int) : green value of the pixel
+        green (int?) : green value of the pixel
         """
         return get_blue_value(self.window_device_context_handle, x, y)
