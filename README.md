@@ -82,7 +82,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.000    0.000 __init__.py:33(get_pixel)
     1    0.000    0.000    0.000    0.000 test.py:5(pixwin)
     1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
-    1    0.000    0.000    0.000    0.000 {built-in method pixwin.libs.get_pixel.get_rgb}
+    1    0.000    0.000    0.000    0.000 {built-in method pixwin.get_pixel.get_rgb}
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
 
@@ -173,7 +173,7 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
     1    0.000    0.000    0.006    0.006 test.py:5(pixwin)
     1    0.002    0.002    0.006    0.006 test.py:6(<listcomp>)
     1    0.000    0.000    0.006    0.006 {built-in method builtins.exec}
-10000    0.003    0.000    0.003    0.000 {built-in method pixwin.libs.get_pixel.get_rgb}
+10000    0.003    0.000    0.003    0.000 {built-in method pixwin.get_pixel.get_rgb}
     1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
 ```
 
