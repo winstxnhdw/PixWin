@@ -1,1 +1,1 @@
-from pixwin.pixwin import PixWin
+from pixwin.pixwin import PixWin as PixWin
