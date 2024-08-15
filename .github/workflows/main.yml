@@ -5,30 +5,28 @@ on:
     paths:
       - .github/workflows/main.yml
       - pyproject.toml
-      - pixwin/
+      - pixwin/**
 
 jobs:
   python:
     strategy:
       matrix:
-        python-version: [3.11, 3.12]
+        python-version: [3.8, 3.9, '3.10', 3.11, 3.12]
 
     uses: winstxnhdw/actions/.github/workflows/python.yml@main
     with:
       runs-on: windows-latest
       python-version: ${{ matrix.python-version }}
+      disable-test: true
 
-  test:
+  install:
     runs-on: windows-latest
 
     steps:
-      - name: Setup Python
-        uses: actions/setup-python@v5.1.1
-        with:
-          python-version: 3.11
-
       - name: Install PixWin
         run: pip install git+https://github.com/winstxnhdw/PixWin
 
       - name: Mini smoke test
         run: python -c "from pixwin import PixWin; PixWin().__enter__().get_pixel(0, 0)"
+
+

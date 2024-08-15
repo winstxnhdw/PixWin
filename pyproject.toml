@@ -5,13 +5,16 @@ build-backend = "poetry.core.masonry.api"
 [project]
 name = "pixwin"
 version = "0.1.0"
-requires-python = ">=3.11"
+requires-python = ">=3.8"
 description = "A fast Python API for retrieving RGB values of a pixel on Windows using ctypes."
 authors = [{ name = "winstxnhdw", email = "you@example.com" }]
 maintainers = [{ name = "winstxnhdw", email = "you@example.com" }]
 readme = "README.md"
 classifiers = [
     "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Operating System :: Microsoft :: Windows",
@@ -28,13 +31,14 @@ authors = ["winstxnhdw <you@example.com>"]
 "Bug Tracker" = "https://github.com/winstxnhdw/PixWin/issues"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
 pyright = "^1.1.376"
 pylint = "^3.2.6"
 pytest = "^8.3.2"
 ruff = "^0.5.7"
+setuptools = "^72.2.0"
 
 [tool.poetry.build]
 script = "build.py"
@@ -58,4 +62,5 @@ disable = [
     "no-name-in-module",
     "useless-import-alias",
     "line-too-long",
+    "duplicate-code",
 ]

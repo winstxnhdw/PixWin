@@ -1,6 +1,7 @@
 
 # PixWin
 
+[![python](https://img.shields.io/badge/python-3.8%20|%203.9%20|%203.10%20|%203.11%20|%203.12-blue)](https://www.python.org/)
 [![linting: pylint](https://img.shields.io/badge/linting-pylint-yellowgreen)](https://github.com/PyCQA/pylint)
 [![main.yml](https://github.com/winstxnhdw/PixWin/actions/workflows/main.yml/badge.svg)](https://github.com/winstxnhdw/PixWin/actions/workflows/main.yml)
 [![formatter.yml](https://github.com/winstxnhdw/PixWin/actions/workflows/formatter.yml/badge.svg)](https://github.com/winstxnhdw/PixWin/actions/workflows/formatter.yml)

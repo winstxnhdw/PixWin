@@ -2,8 +2,8 @@
 #include <Python.h>
 #include <Windows.h>
 
-static COLORREF get_pixel(PyObject *args) {
-    PyObject *hdc_object;
+static COLORREF get_pixel(PyObject* args) {
+    PyObject* hdc_object;
     const int x;
     const int y;
 
@@ -21,33 +21,41 @@ static COLORREF get_pixel(PyObject *args) {
 static PyObject* get_rgb(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    return colour == CLR_INVALID
-        ? Py_NewRef(Py_None)
-        : Py_BuildValue("(iii)", colour & 0xff, (colour >> 8) & 0xff, (colour >> 16) & 0xff);
+    if (colour == CLR_INVALID) {
+        Py_RETURN_NONE;
+    }
+
+    return Py_BuildValue("(iii)", colour & 0xff, (colour >> 8) & 0xff, (colour >> 16) & 0xff);
 }
 
 static PyObject* get_red_value(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    return colour == CLR_INVALID
-        ? Py_NewRef(Py_None)
-        : Py_BuildValue("i", colour & 0xff);
+    if (colour == CLR_INVALID) {
+        Py_RETURN_NONE;
+    }
+
+    return Py_BuildValue("i", colour & 0xff);
 }
 
 static PyObject* get_green_value(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    return colour == CLR_INVALID
-        ? Py_NewRef(Py_None)
-        : Py_BuildValue("i", (colour >> 8) & 0xff);
+    if (colour == CLR_INVALID) {
+        Py_RETURN_NONE;
+    }
+
+    return Py_BuildValue("i", (colour >> 8) & 0xff);
 }
 
 static PyObject* get_blue_value(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    return colour == CLR_INVALID
-        ? Py_NewRef(Py_None)
-        : Py_BuildValue("i", (colour >> 16) & 0xff);
+    if (colour == CLR_INVALID) {
+        Py_RETURN_NONE;
+    }
+
+    return Py_BuildValue("i", (colour >> 16) & 0xff);
 }
 
 static PyMethodDef get_pixel_methods[] = {

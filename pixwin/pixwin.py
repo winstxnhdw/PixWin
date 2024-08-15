@@ -1,4 +1,4 @@
-from typing import Self
+from __future__ import annotations
 
 from pixwin.device_context import Win32OpenDC
 from pixwin.get_pixel import (
@@ -42,7 +42,7 @@ class PixWin:
         self.open_device_context = Win32OpenDC(window_handle)
         self.window_device_context_handle = self.open_device_context.__enter__()
 
-    def __enter__(self) -> Self:
+    def __enter__(self) -> PixWin:
         return self
 
     def __exit__(self, *_):
