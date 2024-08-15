@@ -5,68 +5,25 @@ on:
     paths:
       - .github/workflows/main.yml
       - pyproject.toml
-      - '**.py'
+      - pixwin/
 
 jobs:
-  lint:
-    runs-on: windows-latest
+  python:
+    strategy:
+      matrix:
+        python-version: [3.11, 3.12]
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
-          cache: pip
-
-      - name: Install the development dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run linter
-        run: pylint --recursive=y .
-
-  type-check:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
-          cache: pip
-
-      - name: Install the development dependencies
-        run: pip install -r requirements.txt
-
-      - name: Type Check
-        run: pyright
-
-  build:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.11
-
-      - name: Build the extension
-        run: python setup.py build_ext --inplace
+    uses: winstxnhdw/actions/.github/workflows/python.yml@main
+    with:
+      runs-on: windows-latest
+      python-version: ${{ matrix.python-version }}
 
   test:
     runs-on: windows-latest
 
     steps:
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.1.1
         with:
           python-version: 3.11
 
