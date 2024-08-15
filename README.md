@@ -233,8 +233,8 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 
 ## Development
 
-You can build locally by running `setuptools`.
+You can build locally by running the following.
 
 ```bash
-python setup.py build_ext --inplace
+poetry build
 ```
