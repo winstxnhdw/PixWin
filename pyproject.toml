@@ -5,9 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pixwin"
 version = "0.0.1"
-authors = [
-    { name="winstxnhdw", email="author@example.com" },
-]
+authors = [{ name = "winstxnhdw", email = "author@example.com" }]
 description = "A fast Python API for retrieving RGB values of a pixel on Windows using ctypes."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -20,14 +18,18 @@ classifiers = [
 "Homepage" = "https://github.com/winstxnhdw/PixWin"
 "Bug Tracker" = "https://github.com/winstxnhdw/PixWin/issues"
 
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.format]
+quote-style = "single"
+
 [tool.pylint.format]
-good-names = [
-    "x", "y", "z"
-]
+good-names = ["x", "y", "z"]
 
 [tool.pylint.message_control]
 disable = [
     "missing-module-docstring",
     "no-name-in-module",
-    "useless-import-alias"
+    "useless-import-alias",
 ]

@@ -35,23 +35,18 @@ class PixWin:
     get_blue_value(x: int, y: int) -> Blue | None
         get the blue value of a pixel at a given x, y coordinate
     """
+
     __slots__ = 'open_device_context', 'window_device_context_handle'
 
     def __init__(self, window_handle: int = 0):
-
         self.open_device_context = Win32OpenDC(window_handle)
         self.window_device_context_handle = self.open_device_context.__enter__()
 
-
     def __enter__(self) -> Self:
-
         return self
 
-
     def __exit__(self, *_):
-
         self.open_device_context.__exit__()
-
 
     def get_pixel(self, x: int, y: int) -> Pixel | None:
         """
@@ -72,7 +67,6 @@ class PixWin:
         """
         return get_rgb(self.window_device_context_handle, x, y)
 
-
     def get_red_value(self, x: int, y: int) -> Red | None:
         """
         Summary
@@ -90,7 +84,6 @@ class PixWin:
         """
         return get_red_value(self.window_device_context_handle, x, y)
 
-
     def get_green_value(self, x: int, y: int) -> Green | None:
         """
         Summary
@@ -107,7 +100,6 @@ class PixWin:
         blue (int?) : blue value of the pixel
         """
         return get_green_value(self.window_device_context_handle, x, y)
-
 
     def get_blue_value(self, x: int, y: int) -> Blue | None:
         """

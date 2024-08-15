@@ -4,8 +4,8 @@
 
 static COLORREF get_pixel(PyObject *args) {
     PyObject *hdc_object;
-    int x;
-    int y;
+    const int x;
+    const int y;
 
     if (!PyArg_ParseTuple(args, "Oii", &hdc_object, &x, &y)) {
         return CLR_INVALID;
@@ -13,51 +13,41 @@ static COLORREF get_pixel(PyObject *args) {
 
     const HDC device_context_handle = PyLong_AsVoidPtr(hdc_object);
 
-    if (!device_context_handle && PyErr_Occurred()) {
-        return CLR_INVALID;
-    }
-
-    return GetPixel(device_context_handle, x, y);
+    return !device_context_handle && PyErr_Occurred()
+        ? CLR_INVALID
+        : GetPixel(device_context_handle, x, y);
 }
 
 static PyObject* get_rgb(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    if (colour == CLR_INVALID) {
-        Py_RETURN_NONE;
-    }
-
-    return Py_BuildValue("(iii)", colour & 0xff, (colour >> 8) & 0xff, (colour >> 16) & 0xff);
+    return colour == CLR_INVALID
+        ? Py_NewRef(Py_None)
+        : Py_BuildValue("(iii)", colour & 0xff, (colour >> 8) & 0xff, (colour >> 16) & 0xff);
 }
 
 static PyObject* get_red_value(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    if (colour == CLR_INVALID) {
-        Py_RETURN_NONE;
-    }
-
-    return Py_BuildValue("i", colour & 0xff);
+    return colour == CLR_INVALID
+        ? Py_NewRef(Py_None)
+        : Py_BuildValue("i", colour & 0xff);
 }
 
 static PyObject* get_green_value(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    if (colour == CLR_INVALID) {
-        Py_RETURN_NONE;
-    }
-
-    return Py_BuildValue("i", (colour >> 8) & 0xff);
+    return colour == CLR_INVALID
+        ? Py_NewRef(Py_None)
+        : Py_BuildValue("i", (colour >> 8) & 0xff);
 }
 
 static PyObject* get_blue_value(PyObject *self, PyObject *args) {
     const COLORREF colour = get_pixel(args);
 
-    if (colour == CLR_INVALID) {
-        Py_RETURN_NONE;
-    }
-
-    return Py_BuildValue("i", (colour >> 16) & 0xff);
+    return colour == CLR_INVALID
+        ? Py_NewRef(Py_None)
+        : Py_BuildValue("i", (colour >> 16) & 0xff);
 }
 
 static PyMethodDef get_pixel_methods[] = {
