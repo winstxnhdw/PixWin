@@ -55,12 +55,12 @@ Similar to PixWin, [PyScreeze](https://github.com/asweigart/pyscreeze) retrieves
 <summary>PixWin</summary>
 
 ```python
-import cProfile as profile
+from cProfile import run
 from pixwin import PixWin
 
 
 with PixWin() as pixwin:
-    def pixwin():
+    def get_pixel():
         """
         Summary
         -------
@@ -70,7 +70,7 @@ with PixWin() as pixwin:
 
 
 if __name__ == '__main__':
-    profile.run('pixwin()')
+    run('get_pixel()')
 ```
 
 </details>
@@ -92,8 +92,8 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 <summary><a href="https://github.com/asweigart/pyscreeze">asweigart/pyscreeze</a></summary>
 
 ```python
-import cProfile as profile
-import pyscreeze
+from cProfile import run
+from pyscreeze import pixel
 
 
 def pyscreeze():
@@ -102,9 +102,11 @@ def pyscreeze():
     -------
     retrieve a single pixel value
     """
-    pyscreeze.pixel(0, 0)
+    pixel(0, 0)
 
-profile.run('pyscreeze()')
+
+if __name__ == '__main__':
+    run('pyscreeze()')
 ```
 
 </details>
@@ -150,7 +152,7 @@ from pixwin import PixWin
 
 
 with PixWin() as pixwin:
-    def pixwin():
+    def get_pixel():
         """
         Summary
         -------
@@ -160,7 +162,7 @@ with PixWin() as pixwin:
 
 
 if __name__ == '__main__':
-    profile.run('pixwin()')
+    profile.run('get_pixel()')
 ```
 
 </details>
@@ -183,8 +185,8 @@ ncalls  tottime  percall  cumtime  percall filename:lineno(function)
 <summary><a href="https://github.com/asweigart/pyscreeze">asweigart/pyscreeze</a></summary>
 
 ```python
-import cProfile as profile
-import pyscreeze
+from cProfile import run
+from pyscreeze import pixel
 
 
 def pyscreeze():
@@ -193,10 +195,11 @@ def pyscreeze():
     -------
     retrieve multiple pixel values
     """
-    [pyscreeze.pixel(0, 0) for _ in range(10000)]
+    [pixel(0, 0) for _ in range(10000)]
+
 
 if __name__ == '__main__':
-    profile.run('pyscreeze()')
+    run('pyscreeze()')
 ```
 
 </details>
