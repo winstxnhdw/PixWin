@@ -6,3 +6,13 @@ updates:
       interval: "weekly"
       time: "18:00"
       timezone: "Asia/Singapore"
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: daily
+      time: '18:00'
+      timezone: Asia/Singapore
+    groups:
+       dependencies:
+          patterns: ['*']
