@@ -34,11 +34,11 @@ authors = ["winstxnhdw <you@example.com>"]
 python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
-pyright = "^1.1.376"
-pylint = "^3.2.6"
+pyright = "^1.1.378"
+pylint = "^3.2.7"
 pytest = "^8.3.2"
-ruff = "^0.5.7"
-setuptools = "^72.2.0"
+ruff = "^0.6.3"
+setuptools = "^74.0.0"
 
 [tool.poetry.build]
 script = "build.py"
