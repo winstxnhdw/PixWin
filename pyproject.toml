@@ -37,8 +37,8 @@ python = "^3.8"
 pyright = "^1.1.380"
 pylint = "^3.2.7"
 pytest = "^8.3.3"
-ruff = "^0.6.4"
-setuptools = "^74.1.2"
+ruff = "^0.6.5"
+setuptools = "^75.0.0"
 
 [tool.poetry.build]
 script = "build.py"
