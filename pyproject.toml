@@ -34,9 +34,9 @@ authors = ["winstxnhdw <you@example.com>"]
 python = "^3.8"
 
 [tool.poetry.group.dev.dependencies]
-pyright = "^1.1.395"
+pyright = "^1.1.396"
 pylint = "^3.2.7"
-pytest = "^8.3.4"
+pytest = "^8.3.5"
 ruff = "^0.9.9"
 setuptools = "^75.3.0"
 
