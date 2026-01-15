@@ -262,15 +262,15 @@ files = [
 
 [[package]]
 name = "setuptools"
-version = "75.3.2"
+version = "75.3.3"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
 optional = false
 python-versions = ">=3.8"
 groups = ["dev"]
 markers = "python_version < \"3.11\""
 files = [
-    {file = "setuptools-75.3.2-py3-none-any.whl", hash = "sha256:90ab613b6583fc02d5369cbca13ea26ea0e182d1df2d943ee9cbe81d4c61add9"},
-    {file = "setuptools-75.3.2.tar.gz", hash = "sha256:3c1383e1038b68556a382c1e8ded8887cd20141b0eb5708a6c8d277de49364f5"},
+    {file = "setuptools-75.3.3-py3-none-any.whl", hash = "sha256:4f198f37d40550b86ebc2a678e2246ef76fbec316619a5ac61ecbb3cabf8e9bf"},
+    {file = "setuptools-75.3.3.tar.gz", hash = "sha256:22e8a8ef763eb571d8e414e29b1b9fa9fd0ae3cdcb973ad51c12d8d3ee38ff5c"},
 ]
 
 [package.extras]
@@ -344,4 +344,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.8"
-content-hash = "d985e8f408f229179799ea56c881f482b214dac27bcbd96942ec7c053498c517"
+content-hash = "ea5b79a16d50d1488e9e9c89e0a34e781255d428023055b754eb3e828a7a399e"
